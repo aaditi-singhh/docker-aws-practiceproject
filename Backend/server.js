@@ -5,6 +5,10 @@ import { YSocketIO } from "y-socket.io/dist/server"
 
 
 const app = express()
+
+
+app.use(express.static("public")) //public folder ke andar jo bhi content rehega usko backend ka server serve karna chhalu kar deta hai
+
 const httpServer = createServer(app)
 
 const io = new Server(httpServer, {
@@ -23,12 +27,12 @@ ySocketIO.initialize()
 //  return nhi karte but server thik se chal rraha bata dete hai..
 //konsa server chal raha hai konsa kharap hai these can identify
 
-app.get("/", (req,res) => {
+/* app.get("/", (req,res) => {  //after public api ko abhi ke liye hatana padega
     res.status(200).json({
         message:"hello world",
         success: true 
     })
-})
+}) */
 
 app.get('/health', (req, res) => {
     res.status(200).json({

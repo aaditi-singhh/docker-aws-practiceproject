@@ -55,7 +55,7 @@ useEffect (() => {
   if(username){
 
     //socketio rovider user aur server ke bich ka connection provide
-  const provider = new SocketIOProvider("http://localhost:3000" , "monaco" ,ydoc,{ //apka editor jo frontend mein hai user aur server ka connection stabilize karne ka kam karte hai
+  const provider = new SocketIOProvider("/" , "monaco" ,ydoc,{ //apka editor jo frontend mein hai user aur server ka connection stabilize karne ka kam karte hai
   autoConnect: true,
   })
 
